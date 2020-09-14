@@ -30,3 +30,34 @@ public:
         
     }
 };
+
+// O(1) space
+class Solution {
+public:
+    int rob(vector<int>& nums) 
+    {
+        int n = nums.size();
+        if(n==0) 
+            return 0;
+        int value1=nums[0];
+        if(n==1) 
+        {
+            return value1;
+        }
+        int value2= max(nums[0],nums[1]);
+        if(n==2 )
+        {   //    1 2 3 1
+            return value2;
+        }
+        int currentMax=0;
+        for(int i=2;i<n;i++)
+        {
+            currentMax = max (nums[i]+value1,value2);
+            value1 = value2;
+            value2 = currentMax;
+        }
+        
+        return currentMax;
+        
+    }
+};
