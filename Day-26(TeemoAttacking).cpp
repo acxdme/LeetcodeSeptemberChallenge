@@ -3,6 +3,7 @@ Time complexity : O(N)
 Space complexity : O(N)
 My approach : convert it into merge interval problem.
 */
+// this can also be done without using extra space for creating intervals.
 class Solution {
 public:
     int findPoisonedDuration(vector<int>& timeSeries, int duration) 
